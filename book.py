@@ -48,7 +48,7 @@ for audio_file in audio_files:
 
     # simpan hasil video ke dalam folder output dengan nama file yang sama dengan file audio
     output_path = os.path.join(output_folder, f"{os.path.splitext(audio_file)[0]}.mp4")
-    final_clip.write_videofile(output_path, codec='h264_amf')
+    final_clip.write_videofile(output_path, codec='libx264')
 
     # buat subtitle dan simpan ke dalam folder subtitled dengan nama file yang sama dengan file audio
     subtitle_path = os.path.join(subtitled_folder, f"{os.path.splitext(audio_file)[0]}.srt")
@@ -92,7 +92,7 @@ for filename in os.listdir(subtitled_folder):
 
         # Simpan video dengan backsound
         result_path = os.path.join(subtitled_folder, filename)
-        video_with_backsound.write_videofile(result_path, codec="h264_amf")
+        video_with_backsound.write_videofile(result_path, codec="libx264")
 
         # hapus file lama
         os.remove(video_path)
