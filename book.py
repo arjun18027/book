@@ -67,7 +67,7 @@ backsound_duration = backsound.duration_seconds
 # loop untuk setiap file di folder subtitled
 for filename in os.listdir(subtitled_folder):
     # cek apakah file adalah file video
-    if filename.endswith(VIDEO_EXTENSIONS):
+    if filename.endswith('.mp4'):
         # buka file video
         video_path = os.path.join(subtitled_folder, filename)
         video_clip = VideoFileClip(video_path)
